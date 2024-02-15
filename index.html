@@ -13,15 +13,15 @@
 <body class="font-popopins">
     <!--Home screen-->
     <main class="min-h-screen bg-[#010313] bg-[url(/images/background.png)] bg-no-repeat bg-center">
-        <section class="Home min-h-screen text-white flex justify-center items-center hidden">
+        <section id="Home-screen" class="Home min-h-screen text-white flex justify-center items-center">
             <div class="flex flex-col items-center gap-10">
                 <h1 class="text-8xl font-anton uppercase">ALPHABET CLASH</h1>
             <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-            <button class="btn">Play now</button>
+            <button onclick="play()" class="btn">Play now</button>
             </div>
         </section>
         <!--playground start-->
-        <section class="Play-ground">
+        <section id="play-ground" class="hidden">
             <div class="flex flex-col items-center gap-20 pt-20">
                 <!--screen-->
                 <div class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313cc] bg-[#FFFFFFB3]">
@@ -86,9 +86,18 @@
             </div>
         </section>
         <!--playground end-->
-        <section class="score">
+        <section class="score flex justify-center items-center min-h-screen hidden">
+            <div class="text-white text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
+                <h1 class="text-8xl">
+                    <span class="font-extrabold">Score:</span>
+                    <span>14</span>
+                </h1>
+                <button class="btn">Play Again </button>
+                <p>practice will make you a pro</p>
+            </div>
         </section>
     </main>
-    
+    <script src="js/utility.js"></script>
+    <script src="js/alpha-clash.js"></script>
 </body>
 </html>
