@@ -8,10 +8,40 @@
 //     playgroundSection.classList.remove('hidden')
 // }
 
+function handleKeyboardButtonPress(event){
+    const playerPressed= event.key;
+    // console.log( 'player Pressed', playerPressed)
+    // get the expected to press
+
+    const currentAlphabetElement=document.getElementById('current-alphabet')
+    const currentAlphabet= currentAlphabetElement.innerText;
+    const expectedAlphabet = currentAlphabet.toLowerCase();
+    // console.log(playerPressed, expectedAlphabet);
+
+    //cheak match or not
+    if(playerPressed === expectedAlphabet){
+        console.log('you get a point');
+        console.log('you press correctly',expectedAlphabet);
+        removeBackgroundColorById(expectedAlphabet);
+        continueGame();
+    }
+    else{
+        console.log('you missed . you lost a life')
+    }
+}
+document.addEventListener('keyup', handleKeyboardButtonPress)
+
 function continueGame(){
     //get a random alphabet generate
     const alphabet = getARandomAlphabet();
-    console.log( 'your Random alphabet', alphabet)
+    // console.log( alphabet)
+
+    // set randomly generated alphabet to the screen (show it)
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    currentAlphabetElement.innerText = alphabet;
+
+    //set background color
+    setBackgroundColorById(alphabet)
 
 }
 
